@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms.Internals;
+using Xamarin.Platform;
 
 namespace Xamarin.Forms
 {
@@ -32,6 +33,7 @@ namespace Xamarin.Forms
 			set { SetValue(ProgressProperty, value); }
 		}
 
+		[PortHandler]
 		public Task<bool> ProgressTo(double value, uint length, Easing easing)
 		{
 			var tcs = new TaskCompletionSource<bool>();
