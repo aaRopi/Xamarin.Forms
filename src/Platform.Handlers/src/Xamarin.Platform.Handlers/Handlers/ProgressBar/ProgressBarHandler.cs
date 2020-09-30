@@ -11,11 +11,23 @@
 #endif
 		};
 
-		public static void MapProgress(ProgressBarHandler handler, IProgress progress) => handler.TypedNativeView?.UpdateProgress(progress);
+		public static void MapProgress(ProgressBarHandler handler, IProgress progress)
+		{
+			ViewHandler.CheckParameters(handler, progress);
+			handler.TypedNativeView?.UpdateProgress(progress);
+		}
 
-		public static void MapProgressColor(ProgressBarHandler handler, IProgress progress) => handler.TypedNativeView?.UpdateProgressColor(progress);
+		public static void MapProgressColor(ProgressBarHandler handler, IProgress progress)
+		{
+			ViewHandler.CheckParameters(handler, progress);
+			handler.TypedNativeView?.UpdateProgressColor(progress);
+		}
 
-		public static void MapBackgroundColor(ProgressBarHandler handler, IProgress progress) => handler.TypedNativeView?.UpdateBackgroundColor(progress);
+		public static void MapBackgroundColor(ProgressBarHandler handler, IProgress progress)
+		{
+			ViewHandler.CheckParameters(handler, progress);
+			handler.TypedNativeView?.UpdateBackgroundColor(progress);
+		}
 
 		public ProgressBarHandler() : base(ProgressMapper)
 		{
